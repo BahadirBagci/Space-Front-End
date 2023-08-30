@@ -1,0 +1,151 @@
+* {                         /*tüm sayfanın ayarı */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*öğeleri oluşturacağım için,( öğenin genişliği ve yüksekliği içeriğin sınırları (border) 
+ve iç boşluğu (padding) dahil olacak şekilde hesaplar yani, içerik, border ve padding genişlik
+ve yüksekliği etkiler ancak içerik boyutu sabit kalırken, öğenin dış boyutları daha fazla artmasınb diye.) */
+}
+
+html {
+    font-size: 7px;          /*ezilecek olan kod burda olmasının nedeni aşağıda buna göre rem olarak % ayarını yapıcam*/
+}
+
+body {
+    font-family: 'PT Serif', serif;  /*yazıların styli*/
+    color: #ffffff;                /*başlık rengi*/
+    font-size: 1.6rem;               /*htmldeki font-size ezildi ve yazı boyutu % ayarlandı*/
+    line-height: 1.5;                /*satır arası mesafe ayarı*/
+    text-align: center;              /*yazıyı ortaladım*/
+    background-color: #333;        /*tüm sayfanın arka planı*/
+}
+
+a {
+    text-decoration: none;           /*linkin alt çizgisini sildim*/
+}
+
+p {
+    padding: 1.6rem 0;              /*yazının alan içersinde nerde durması gerektiği % ütten alttan bellirledim sağ sol 0*/
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.clear-fix::after {                /*burası pc modua geldiğinde web sitesinin alt kısmındaki bilgilendirme bölümü renk
+                                    olarak ayrışsın bozulmasın diye bu işlemi yaptım*/
+    content: "";
+    display: block;
+    clear: both;
+}
+
+header {
+    height: 46rem;                 /*headerın genişliği ayarladım % (460px) kaplayacağı alanı */
+}
+
+
+header .bg-image {                 /*headera ekleyeceğim görselin özellikleri*/
+    position: absolute;            /*pozisyonu üstten ayarlamak için*/
+    background-image: url(img/fo0.jpg);/*nerden görseli alıcağını belirledim*/
+    background-size: cover;        /*kapsayıcı olarak ayarladım */
+    background-position: center;   /*konum ayarı merkezde*/
+    height: 46rem;                 /*yüksekliği % */
+    width: 100%;                   /*genişlik*/
+    opacity: 0.4;                  /*arka plan fotoğrafının şeffaflığını ayarladım*/
+    z-index: -1;                   /*yıldızlı fotoğrafın üztündeki yazı opacity kod yüzünden şeffaflaşıyordu onu tamamiyle
+                                   beyazlaştırdım daha gözükür olsun diye*/
+}
+
+header h1 {                        /*yazının tamamiyle fotoğrafın üstüne gelmesi için */
+    padding: 12rem;                /*boşluk ayarladım %*/
+    padding-bottom: 0;             /*alttan boşluk %*/
+}
+
+.buton {
+    display: inline-block;         /*öğenin hem inline (satır içi) öğeler gibi davranmasını hem de block öğeler gibi
+                                   özelliklerini taşımasını sağlar linki butona dönüştüreceğimiz için*/
+    background-color: #333;
+    color: white;                /*yazı rengi*/
+    border: 1px solid #666;      /*çerçeve*/
+    padding: 1.6rem 3.2rem;
+    margin: .5rem 0;
+    transition: all 0.4s;          /*buton 0.4 saniyede renk değiştiricek*/
+   border-radius: 10px 50px;       /*tuşa şekil verdim*/
+}
+
+.buton:hover {                     /*üstüne gelindiğinde yazının ve butoın arka planının renk ayarları*/
+    background-color: white;
+    color: #333;
+}
+
+#sec-a {                           /*yazı ayarı yapılıyorum*/
+    background-color:rgb(189, 185, 185);   /*zeminin rengi*/
+    color: #333;                 /*yazı rengi*/
+    padding: 3.2rem 0;             /*boşluk*/
+
+}
+
+#sec-b {                           /*resim ayarı*/
+    padding: 2rem;
+}
+
+#sec-b ul {                        /*liste noktalarını kaldırdım*/
+    list-style: none;
+}
+
+#sec-b li {                        /*fotografların altındaki yazılar*/
+    background-color:rgb(189, 185, 185);
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.col-content {                     /*yazılar iç boşluk*/
+    padding: 1.5rem;
+}
+
+#sec-c {                           /*ilk bilgi bölümü*/
+    background-color: rgb(189, 185, 185);
+    color: #333;
+    padding: 5rem;
+}
+
+#sec-d .box {
+    padding: 5rem;
+}
+
+#sec-d .box:first-child {         /*ikinci bilgi bölümü*/
+    background-color: darkslategray;
+}
+
+footer {                          /*en alşttaki bilgi bölümü*/
+    padding: 4rem;
+    background-color: rgb(17, 16, 16);
+}
+
+footer a {                        /*en alttaki bilgi bölümünün link rengi*/
+    color: yellowgreen;
+}
+
+@media screen and (min-width:800px) {   /*tablet için ayarlıyorum web sitesini*/
+    html {
+        font-size: 9px;
+    }
+}
+
+@media screen and (min-width:1200px) {  /*bilgisayar uyumlu yapıyorum */
+    html {
+        font-size: 11px;
+    }
+
+    #sec-b li {
+        width: 28%;
+        margin: 1%;
+        display: inline-block;
+    }
+
+    .box {
+        width: 50%;
+        float: left;
+
+    }
+}
